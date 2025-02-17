@@ -1,0 +1,64 @@
+#服务端口
+server:
+  port: 18080
+spring:
+  rabbitmq:
+    host: 192.168.136.160
+    port: 5672
+    username: guest
+    password: guest
+  application:
+    name: tanhua-app-server
+  redis: #redis配置
+    port: 6379
+    host: 192.168.136.160
+  cloud: #nacos配置
+    nacos:
+      discovery:
+        server-addr: 192.168.136.160:8848
+dubbo: #dubbo配置
+  registry:
+    address: spring-cloud://localhost
+  consumer:
+    check: false
+tanhua:
+  default:
+    recommend:
+      users: 2,3,8,10,18,20,24,29,27,32,36,37,56,64,75,88
+  sms:
+    signName: 物流云商
+    templateCode: SMS_106590012
+    accessKey: LTAI4GKgob9vZ53k2SZdyAC7
+    secret: LHLBvXmILRoyw0niRSBuXBZewQ30la
+  oss:
+    accessKey: LTAI4GKgob9vZ53k2SZdyAC7
+    secret: LHLBvXmILRoyw0niRSBuXBZewQ30la
+    endpoint: oss-cn-beijing.aliyuncs.com
+    bucketName: tanhua001
+    url: https://tanhua001.oss-cn-beijing.aliyuncs.com/
+  aip:
+    appId: 24021388
+    apiKey: ZnMTwoETXnu4OPIGwGAO2H4G
+    secretKey: D4jXShyinv5q26bUS78xRKgNLnB9IfZh
+  huanxin:
+    appkey: 1110201018107234#tanhua
+    clientId: YXA6nxJJ_pdEQ_eYUlqcRicS4w
+    clientSecret: YXA6GMUxVEZhAvxlMn4OvHSXbWuEUTE
+
+  dfs:
+    so-timeout: 1500
+    connect-timeout: 600
+    #缩略图生成参数
+    thumb-image:
+      width: 150
+      height: 150
+    #TrackerList参数,支持多个
+    tracker-list: 192.168.136.160:22122
+    web-server-url: http://192.168.136.160:8888
+Spring:
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+
+
